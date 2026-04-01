@@ -59,4 +59,10 @@ class FixedRecord:
                         record['_slot'] = slot
                         records.append(record)
         return records
+    
+    # def add(self, alumno: d.Alumno):
 
+
+
+if __name__ == '__main__':
+    alumnos = d.generar_alumnos()
