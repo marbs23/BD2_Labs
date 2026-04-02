@@ -42,11 +42,9 @@ def pack_record(alumno: d.Alumno) -> bytes:
 
 
 
-class FixedRecord:
+class FixedRecordLastMove:
     def __init__(self, filename):
         self.filename = filename
-        self.format = RECORD_FMT
-        self.size = struct.calcsize(self.format)
 
     def _read_header(self, f, page_idx: int) -> tuple:
         f.seek(PAGE_SIZE * page_idx)
@@ -133,6 +131,26 @@ class FixedRecord:
 
             file.seek(PAGE_SIZE * last_page)
             file.write(self._pack_header(total_last, active_last-1))
+
+
+class FixedRecordFreeList:
+    def __init__(self, filename):
+        self.filename = filename
+
+    def _read_header(self, file, page_idx) -> tuple:
+        return
+    
+    def _pack_header(self, total, active, free_ptr = -1) -> bytes:
+        return
+
+    def load():
+        return
+    def add(record):
+        return
+    def readRecord(pos):
+        return
+    def remove(pos):
+        return
 
 
 
